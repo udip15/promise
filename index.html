@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Promise Day 💍 For My Apsara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --red-deep: #8B0000;
+            --red-rich: #B22222;
+            --red-vivid: #DC143C;
+            --red-blush: #FF6B6B;
+            --rose-gold: #C9707B;
+            --cream: #FFF5F5;
+            --parchment: #FDE8E8;
+            --gold: #D4AF6A;
+            --dark: #1A0000;
+            --text-dark: #3D0000;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: var(--dark);
+            font-family: 'EB Garamond', serif;
+            cursor: default;
+        }
+        /* ─── HEART RAIN ─────────────────────────────── */
+        
+        #heart-rain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9000;
+            overflow: hidden;
+        }
+        
+        .hr {
+            position: absolute;
+            top: -60px;
+            font-size: 22px;
+            animation: hrFall linear forwards;
+            opacity: 0;
+            user-select: none;
+        }
+        
+        @keyframes hrFall {
+            0% {
+                top: -60px;
+                opacity: 0;
+                transform: rotate(0deg) translateX(0);
+            }
+            8% {
+                opacity: 1;
+            }
+            92% {
+                opacity: .7;
+            }
+            100% {
+                top: 110vh;
+                opacity: 0;
+                transform: rotate(720deg) translateX(40px);
+            }
+        }
+        /* ─── CURSOR SPARKLE ─────────────────────────── */
+        
+        .cursor-spark {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--red-vivid);
+            pointer-events: none;
+            z-index: 9999;
+            animation: cSpark .6s ease-out forwards;
+            box-shadow: 0 0 6px var(--red-vivid);
+        }
+        
+        @keyframes cSpark {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0) translateY(-20px);
+                opacity: 0;
+            }
+        }
+        /* ─── PAGE SYSTEM ────────────────────────────── */
+        
+        .page {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .9s ease, visibility .9s;
+            z-index: 10;
+            pointer-events: none;
+            overflow-y: auto;
+            padding: 30px 20px;
+        }
+        
+        .page.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        /* ─── SHARED BG ──────────────────────────────── */
+        
+        .page::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+        }
+        
+        #p1::before {
+            background: radial-gradient(ellipse at 50% 40%, #5c0011 0%, #1a0000 70%);
+        }
+        
+        #p2::before {
+            background: radial-gradient(ellipse at 30% 60%, #6b000d 0%, #1a0000 70%);
+        }
+        
+        #p3::before {
+            background: radial-gradient(ellipse at 70% 30%, #550010 0%, #110000 70%);
+        }
+        
+        #p4::before {
+            background: radial-gradient(ellipse at 50% 50%, #600014 0%, #1a0000 70%);
+        }
+        
+        #p5::before {
+            background: radial-gradient(ellipse at 40% 60%, #650012 0%, #1a0000 70%);
+        }
+        
+        #p6::before {
+            background: radial-gradient(ellipse at 60% 40%, #5a000f 0%, #150000 70%);
+        }
+        
+        #p7::before {
+            background: radial-gradient(ellipse at 50% 30%, #700016 0%, #1a0000 70%);
+        }
+        /* ─── GOLD LINE DECO ─────────────────────────── */
+        
+        .gold-line {
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 18px auto;
+        }
+        
+        .gold-line.wide {
+            width: 220px;
+        }
+        /* ─── TYPOGRAPHY ─────────────────────────────── */
+        
+        .script-title {
+            font-family: 'Sacramento', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--red-blush);
+            text-shadow: 0 0 40px rgba(220, 20, 60, .6), 0 2px 4px rgba(0, 0, 0, .5);
+            line-height: 1.1;
+            text-align: center;
+        }
+        
+        .serif-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 3vw, 1.7rem);
+            color: var(--parchment);
+            font-style: italic;
+            text-align: center;
+            letter-spacing: .04em;
+            line-height: 1.6;
+            max-width: 540px;
+        }
+        
+        .page-tag {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: .85rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-align: center;
+            opacity: .8;
+        }
+        /* ─── BUTTON ─────────────────────────────────── */
+        
+        .btn-red {
+            display: inline-block;
+            padding: 16px 52px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--cream);
+            background: linear-gradient(135deg, var(--red-deep) 0%, var(--red-vivid) 100%);
+            border: 1px solid rgba(212, 175, 106, .4);
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(139, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .1);
+            transition: all .35s ease;
+            margin-top: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-red::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .15), transparent);
+            opacity: 0;
+            transition: opacity .3s;
+        }
+        
+        .btn-red:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(220, 20, 60, .55);
+        }
+        
+        .btn-red:hover::after {
+            opacity: 1;
+        }
+        
+        .btn-red:active {
+            transform: translateY(0);
+        }
+        /* ─── PAGE 1 ─────────────────────────────────── */
+        
+        #p1 .inner {
+            text-align: center;
+            animation: fadeUp 1.4s ease both;
+        }
+        
+        .emoji-row {
+            font-size: 2.4rem;
+            margin: 10px 0;
+            letter-spacing: .3em;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* ─── PAGE 2 ─────────────────────────────────── */
+        
+        #p2 .inner {
+            text-align: center;
+            animation: fadeUp 1.4s ease both;
+            max-width: 580px;
+        }
+        
+        .eye-icon {
+            font-size: 4rem;
+            margin: 14px 0;
+            animation: eyeDream 5s ease-in-out infinite;
+            filter: drop-shadow(0 0 14px rgba(220, 20, 60, .5));
+        }
+        
+        @keyframes eyeDream {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            30% {
+                transform: scale(1.15);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(0.6);
+                opacity: .2;
+            }
+            /* closes */
+            70% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+        /* ─── PAGE 3 — PHOTO GALLERY ─────────────────── */
+        
+        #p3 {
+            justify-content: flex-start;
+            padding-top: 40px;
+        }
+        
+        #p3 .inner {
+            width: 100%;
+            max-width: 860px;
+            text-align: center;
+        }
+        
+        .gallery-title {
+            margin-bottom: 6px;
+        }
+        
+        .promise-strip {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--gold);
+            letter-spacing: .08em;
+            margin: 8px 0 16px;
+            text-align: center;
+        }
+        /* swipe wrapper */
+        
+        .gallery-outer {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 18px;
+        }
+        
+        .gallery-track {
+            display: flex;
+            transition: transform .55s cubic-bezier(.4, 0, .2, 1);
+            will-change: transform;
+        }
+        
+        .gallery-slide {
+            flex: 0 0 100%;
+            position: relative;
+        }
+        
+        .gallery-slide img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            display: block;
+            border-radius: 18px;
+            filter: brightness(.9) contrast(1.05) saturate(1.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
+        }
+        
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 24px;
+            background: linear-gradient(to top, rgba(26, 0, 0, .85), transparent);
+            color: var(--parchment);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+        }
+        /* nav arrows */
+        
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(139, 0, 0, .6);
+            border: 1px solid rgba(212, 175, 106, .3);
+            color: var(--cream);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .25s;
+            z-index: 5;
+        }
+        
+        .gallery-arrow:hover {
+            background: var(--red-vivid);
+        }
+        
+        .gallery-arrow.left {
+            left: 10px;
+        }
+        
+        .gallery-arrow.right {
+            right: 10px;
+        }
+        
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .g-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .25);
+            cursor: pointer;
+            transition: background .3s, transform .3s;
+        }
+        
+        .g-dot.active {
+            background: var(--red-vivid);
+            transform: scale(1.3);
+        }
+        /* ─── PAGE 4 — MY VOW ───────────────────────── */
+        
+        #p4 .vow-card {
+            background: linear-gradient(145deg, rgba(139, 0, 0, .18), rgba(26, 0, 0, .4));
+            border: 1px solid rgba(212, 175, 106, .25);
+            border-radius: 24px;
+            padding: 50px 48px;
+            max-width: 640px;
+            text-align: center;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .05);
+            animation: fadeUp 1.2s ease both;
+        }
+        
+        .vow-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 3vw, 1.7rem);
+            color: var(--cream);
+            font-style: italic;
+            line-height: 1.9;
+        }
+        
+        .vow-quote span {
+            color: var(--red-blush);
+            font-weight: 600;
+        }
+        
+        .ring-icon {
+            font-size: 3rem;
+            margin: 12px 0;
+            animation: spinIn 1s ease;
+        }
+        
+        @keyframes spinIn {
+            from {
+                transform: rotate(-180deg) scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: rotate(0deg) scale(1);
+                opacity: 1;
+            }
+        }
+        /* ─── PAGE 5 — QUIET PROMISES ───────────────── */
+        
+        #p5 .inner {
+            max-width: 680px;
+            text-align: center;
+            animation: fadeUp 1.2s ease both;
+        }
+        
+        .promise-list {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+            margin: 28px 0;
+            text-align: left;
+        }
+        
+        .promise-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--parchment);
+            line-height: 1.55;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, .04);
+            border-left: 3px solid var(--red-vivid);
+            border-radius: 0 10px 10px 0;
+            animation: fadeUp .6s ease both;
+        }
+        
+        .promise-list li:nth-child(2) {
+            animation-delay: .1s;
+        }
+        
+        .promise-list li:nth-child(3) {
+            animation-delay: .2s;
+        }
+        
+        .promise-list li:nth-child(4) {
+            animation-delay: .3s;
+        }
+        
+        .promise-list li:nth-child(5) {
+            animation-delay: .4s;
+        }
+        
+        .promise-list li:nth-child(6) {
+            animation-delay: .5s;
+        }
+        
+        .promise-list li:nth-child(7) {
+            animation-delay: .6s;
+        }
+        
+        .promise-list li:nth-child(8) {
+            animation-delay: .7s;
+        }
+        
+        .p-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        /* ─── PAGE 6 — MORE PROMISES ────────────────── */
+        
+        #p6 .inner {
+            max-width: 700px;
+            text-align: center;
+            animation: fadeUp 1.2s ease both;
+        }
+        
+        .big-promise-block {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(220, 20, 60, .25);
+            border-radius: 18px;
+            padding: 36px 40px;
+            margin: 22px 0;
+            text-align: left;
+        }
+        
+        .big-promise-block p {
+            font-family: 'EB Garamond', serif;
+            font-size: clamp(.95rem, 2.2vw, 1.2rem);
+            color: var(--parchment);
+            line-height: 2;
+            margin-bottom: 16px;
+        }
+        
+        .big-promise-block p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .big-promise-block p::before {
+            content: '❝ ';
+            color: var(--red-blush);
+        }
+        /* ─── PAGE 7 — FINAL ─────────────────────────── */
+        
+        #p7 .inner {
+            text-align: center;
+            animation: fadeUp 1.4s ease both;
+        }
+        
+        .hands-img-wrapper {
+            width: min(340px, 90%);
+            height: 260px;
+            margin: 22px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            border: 2px solid rgba(212, 175, 106, .3);
+            background: rgba(26, 0, 0, .3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
+            overflow: hidden;
+        }
+        
+        .hands-img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+        
+        .hands-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            color: rgba(255, 255, 255, .4);
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1rem;
+        }
+        
+        .final-quote {
+            font-family: 'Sacramento', cursive;
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            color: var(--red-blush);
+            text-shadow: 0 0 30px rgba(220, 20, 60, .5);
+            line-height: 1.3;
+            margin: 10px 0;
+        }
+        
+        .firework-btn {
+            display: inline-block;
+            padding: 18px 56px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #8B0000 100%);
+            background-size: 200%;
+            border: 1px solid rgba(212, 175, 106, .5);
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(220, 20, 60, .4);
+            animation: shimmerBtn 3s linear infinite;
+            margin-top: 16px;
+        }
+        
+        @keyframes shimmerBtn {
+            0% {
+                background-position: 0% 50%;
+                box-shadow: 0 0 30px rgba(220, 20, 60, .4);
+            }
+            50% {
+                background-position: 100% 50%;
+                box-shadow: 0 0 50px rgba(220, 20, 60, .8);
+            }
+            100% {
+                background-position: 0% 50%;
+                box-shadow: 0 0 30px rgba(220, 20, 60, .4);
+            }
+        }
+        /* ─── FIREWORK PARTICLE ──────────────────────── */
+        
+        .fw-p {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            animation: fwBurst 1.2s ease-out forwards;
+        }
+        
+        @keyframes fwBurst {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        .love-bubble {
+            position: fixed;
+            bottom: -80px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, rgba(139, 0, 0, .92), rgba(220, 20, 60, .9));
+            color: #fff;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            border-radius: 50px;
+            border: 1px solid rgba(212, 175, 106, .35);
+            pointer-events: none;
+            z-index: 9997;
+            animation: bubbleUp 4.5s ease-out forwards;
+            white-space: nowrap;
+        }
+        
+        @keyframes bubbleUp {
+            0% {
+                bottom: -80px;
+                opacity: 0;
+                transform: scale(.7) rotate(-3deg);
+            }
+            15% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+            85% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 110vh;
+                opacity: 0;
+                transform: scale(.85) rotate(3deg);
+            }
+        }
+        /* ─── DECORATIVE PETALS FALLING ──────────────── */
+        
+        .petal {
+            position: fixed;
+            font-size: 18px;
+            top: -30px;
+            pointer-events: none;
+            animation: petalFall linear infinite;
+            z-index: 4;
+            opacity: 0;
+        }
+        
+        @keyframes petalFall {
+            0% {
+                top: -30px;
+                opacity: 0;
+                transform: rotate(0deg) translateX(0);
+            }
+            10% {
+                opacity: .7;
+            }
+            90% {
+                opacity: .4;
+            }
+            100% {
+                top: 110vh;
+                opacity: 0;
+                transform: rotate(540deg) translateX(60px);
+            }
+        }
+        /* ─── RESPONSIVE ─────────────────────────────── */
+        
+        @media (max-width: 600px) {
+            #p4 .vow-card {
+                padding: 36px 28px;
+            }
+            .big-promise-block {
+                padding: 26px 22px;
+            }
+            .promise-list li {
+                font-size: .95rem;
+                padding: 12px 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Heart Rain -->
+    <div id="heart-rain"></div>
+
+    <!-- PAGE 1 — ENTER HERE -->
+    <div class="page active" id="p1">
+        <div class="inner">
+            <p class="page-tag">11 . 02 . 2026</p>
+            <div class="gold-line"></div>
+            <h1 class="script-title">Hello Meri Apsara!</h1>
+            <div class="emoji-row">🌹 💌 🕊️ 💍 🌙</div>
+            <div class="gold-line wide"></div>
+            <p class="serif-sub">
+                I have created a small world just for you.<br/> A place where promises are kept forever.
+            </p>
+            <div class="gold-line"></div>
+            <button class="btn-red" onclick="goTo('p2')">✦ Enter Here ✦</button>
+        </div>
+    </div>
+
+    <!-- PAGE 2 — CLOSE YOUR EYES -->
+    <div class="page" id="p2">
+        <div class="inner">
+            <p class="page-tag">A Surprise...</p>
+            <div class="gold-line"></div>
+            <h2 class="script-title">Close Your Eyes...</h2>
+            <div class="eye-icon">👁️</div>
+            <div class="gold-line wide"></div>
+            <p class="serif-sub">
+                Imagine us, together,<br/>creating memories that never fade.<br/><br/>
+                <em>Ready to see them?</em>
+            </p>
+            <div class="gold-line"></div>
+            <button class="btn-red" onclick="goTo('p3')">💫 Yes, Show Me</button>
+        </div>
+    </div>
+
+    <!-- PAGE 3 — OUR MOMENTS (Photo Gallery) -->
+    <div class="page" id="p3">
+        <div class="inner">
+            <p class="page-tag">My Beautiful Apsara</p>
+            <h2 class="script-title gallery-title">You, In Every Frame</h2>
+            <p class="promise-strip">✦ Every picture of you is a reason to smile ✦</p>
+
+            <div class="gallery-outer" id="galleryOuter">
+                <div class="gallery-track" id="galleryTrack">
+
+                    <div class="gallery-slide">
+                        <img src="1.jpeg" alt="Memory 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="slide-placeholder" style="display:none; height:340px; background:rgba(139,0,0,.2); border-radius:18px; align-items:center; justify-content:center; flex-direction:column; gap:10px; color:rgba(255,255,255,.4); font-family:'Cormorant Garamond',serif; font-style:italic;">
+                            <span style="font-size:2.5rem">🌹</span>
+                            <span>Insert Photo — 1.jpeg</span>
+                        </div>
+                        <div class="slide-caption">The most beautiful sight I've ever seen 🌹</div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img src="2.jpeg" alt="Memory 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="slide-placeholder" style="display:none; height:340px; background:rgba(139,0,0,.2); border-radius:18px; align-items:center; justify-content:center; flex-direction:column; gap:10px; color:rgba(255,255,255,.4); font-family:'Cormorant Garamond',serif; font-style:italic;">
+                            <span style="font-size:2.5rem">💕</span>
+                            <span>Insert Photo — 2.jpeg</span>
+                        </div>
+                        <div class="slide-caption">That smile that steals my heart every time 💕</div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img src="3.jpg" alt="Memory 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="slide-placeholder" style="display:none; height:340px; background:rgba(139,0,0,.2); border-radius:18px; align-items:center; justify-content:center; flex-direction:column; gap:10px; color:rgba(255,255,255,.4); font-family:'Cormorant Garamond',serif; font-style:italic;">
+                            <span style="font-size:2.5rem">✨</span>
+                            <span>Insert Photo — 3.jpeg</span>
+                        </div>
+                        <div class="slide-caption">You make everything beautiful just by being you ✨</div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img src="4.jpeg" alt="Memory 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="slide-placeholder" style="display:none; height:340px; background:rgba(139,0,0,.2); border-radius:18px; align-items:center; justify-content:center; flex-direction:column; gap:10px; color:rgba(255,255,255,.4); font-family:'Cormorant Garamond',serif; font-style:italic;">
+                            <span style="font-size:2.5rem">💖</span>
+                            <span>Insert Photo — 4.jpeg</span>
+                        </div>
+                        <div class="slide-caption">My reason to believe in magic 💖</div>
+                    </div>
+
+                </div>
+                <!-- track -->
+                <button class="gallery-arrow left" id="gLeft" onclick="gSlide(-1)">‹</button>
+                <button class="gallery-arrow right" id="gRight" onclick="gSlide(1)">›</button>
+            </div>
+
+            <div class="gallery-dots" id="gDots"></div>
+            <div class="gold-line wide" style="margin-top:18px;"></div>
+            <button class="btn-red" onclick="goTo('p4')" style="margin-top:10px;">Continue ❤</button>
+        </div>
+    </div>
+
+    <!-- PAGE 4 — MY VOW -->
+    <div class="page" id="p4">
+        <div class="vow-card">
+            <p class="page-tag">My Vow to You</p>
+            <div class="gold-line"></div>
+            <div class="ring-icon">💍</div>
+            <div class="vow-quote">
+                <span>"I don't promise that it will be easy."</span><br/><br/> But I promise it will be worth it.<br/><br/>
+                <span>"I promise to choose you, every single day."</span>
+            </div>
+            <div class="gold-line wide"></div>
+            <button class="btn-red" onclick="goTo('p5')">See My Promises 🤍</button>
+        </div>
+    </div>
+
+    <!-- PAGE 5 — QUIET PROMISES -->
+    <div class="page" id="p5">
+        <div class="inner">
+            <p class="page-tag">Quiet Promises</p>
+            <div class="gold-line"></div>
+            <h2 class="script-title" style="font-size:clamp(2.2rem,6vw,4.5rem);">I Promise...</h2>
+            <div class="gold-line wide"></div>
+
+            <ul class="promise-list">
+                <li><span class="p-icon">🤍</span>To stay by your side, through every storm and every sunshine.</li>
+                <li><span class="p-icon">👂</span>To listen more than I speak — your words matter more than mine.</li>
+                <li><span class="p-icon">🌱</span>To grow together, hand in hand, season by season.</li>
+                <li><span class="p-icon">🫂</span>To be gentle with your feelings, always.</li>
+                <li><span class="p-icon">😄</span>To annoy you forever — in the most loving way possible.</li>
+                <li><span class="p-icon">⭐</span>To believe in you even when you doubt yourself most.</li>
+                <li><span class="p-icon">🤝</span>To hold your hand in every storm, every staircase, every step.</li>
+                <li><span class="p-icon">😂</span>To tease you forever — and make you smile even on hard days.</li>
+            </ul>
+
+            <div class="gold-line wide"></div>
+            <button class="btn-red" onclick="goTo('p6')">More Promises 💌</button>
+        </div>
+    </div>
+
+    <!-- PAGE 6 — MORE PROMISES (Long) -->
+    <div class="page" id="p6">
+        <div class="inner">
+            <p class="page-tag">From My Heart</p>
+            <div class="gold-line"></div>
+            <h2 class="script-title" style="font-size:clamp(2rem,5vw,4rem);">More Promises</h2>
+            <div class="gold-line wide"></div>
+
+            <div class="big-promise-block">
+                <p>I promise to never make you feel alone, even when miles separate us. Distance is just a number — my heart is always exactly where you are.</p>
+                <p>I promise to remember the little things — your favourite songs, the way you laugh, the face you make when something surprises you. I am paying attention, always.</p>
+                <p>I promise to be your safe place. You can be messy, uncertain, loud, quiet — all of you is welcome here, no conditions attached.</p>
+                <p>I promise to never stop making you feel special on ordinary Tuesday afternoons, not just on special days.</p>
+            </div>
+
+            <div class="big-promise-block">
+                <p>I promise to fight fair — no low blows, no silence as a weapon. Even in our hardest moments, I will choose us over my ego.</p>
+                <p>I promise to celebrate every single win of yours — big dreams and tiny victories. Your success is my joy.</p>
+                <p>I promise to be curious about you, forever. There is always more of you to know and I never want to stop discovering you.</p>
+                <p>I promise that my feelings for you are real, patient, and they will not change with situations or seasons.</p>
+            </div>
+
+            <div class="gold-line wide"></div>
+            <button class="btn-red" onclick="goTo('p7')">Happy Promise Day 💍</button>
+        </div>
+    </div>
+
+    <!-- PAGE 7 — FINAL -->
+    <div class="page" id="p7">
+        <div class="inner">
+            <p class="page-tag">Happy Promise Day</p>
+            <div class="gold-line"></div>
+            <h1 class="script-title">Happy Promise Day!</h1>
+            <div class="gold-line wide"></div>
+
+            <!-- Hands image wrapper with proper containment -->
+            <div class="hands-img-wrapper">
+                <img src="5.png" alt="Our Hands Together" class="hands-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="hands-placeholder" style="display:none;">
+                    <span style="font-size:2.8rem">🫶</span>
+                    <span>Insert Photo — 5.png</span>
+                </div>
+            </div>
+
+            <div class="gold-line"></div>
+            <p class="final-quote">
+                You are my today<br/> and all of my tomorrows.
+            </p>
+            <div class="gold-line wide"></div>
+
+            <button class="firework-btn" onclick="launchCelebration()">
+      ✦ Seal With Love ✦
+    </button>
+        </div>
+    </div>
+
+    <!-- ════════════════════ JS ════════════════════ -->
+    <script>
+        /* ── PAGE NAV ─────────────────────────────────── */
+        function goTo(id) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        /* ── HEART RAIN ───────────────────────────────── */
+        const HR_EMOJIS = ['❤️', '💕', '💖', '💗', '💝', '🌹', '💘', '❣️', '💞', '🌷'];
+
+        function spawnHeart() {
+            const el = document.createElement('div');
+            el.className = 'hr';
+            el.textContent = HR_EMOJIS[Math.floor(Math.random() * HR_EMOJIS.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.fontSize = (14 + Math.random() * 18) + 'px';
+            const dur = 4 + Math.random() * 5;
+            el.style.animationDuration = dur + 's';
+            el.style.animationDelay = (Math.random() * 2) + 's';
+            document.getElementById('heart-rain').appendChild(el);
+            setTimeout(() => el.remove(), (dur + 2) * 1000);
+        }
+        setInterval(spawnHeart, 220);
+
+        /* ── ROSE PETALS ──────────────────────────────── */
+        function spawnPetal() {
+            const el = document.createElement('div');
+            el.className = 'petal';
+            el.textContent = '🌸';
+            el.style.left = Math.random() * 100 + 'vw';
+            const dur = 7 + Math.random() * 6;
+            el.style.animationDuration = dur + 's';
+            el.style.animationDelay = Math.random() * 3 + 's';
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), (dur + 4) * 1000);
+        }
+        setInterval(spawnPetal, 1200);
+
+        /* ── CURSOR SPARKLES ──────────────────────────── */
+        document.addEventListener('mousemove', e => {
+            if (Math.random() > .7) {
+                const s = document.createElement('div');
+                s.className = 'cursor-spark';
+                s.style.left = e.clientX - 5 + 'px';
+                s.style.top = e.clientY - 5 + 'px';
+                document.body.appendChild(s);
+                setTimeout(() => s.remove(), 600);
+            }
+        });
+
+        /* ── GALLERY ──────────────────────────────────── */
+        let gIndex = 0;
+        const SLIDES = 4;
+
+        // build dots
+        const dotsEl = document.getElementById('gDots');
+        for (let i = 0; i < SLIDES; i++) {
+            const d = document.createElement('div');
+            d.className = 'g-dot' + (i === 0 ? ' active' : '');
+            d.onclick = () => gSetSlide(i);
+            dotsEl.appendChild(d);
+        }
+
+        function gSetSlide(n) {
+            gIndex = (n + SLIDES) % SLIDES;
+            document.getElementById('galleryTrack').style.transform = `translateX(-${gIndex * 100}%)`;
+            document.querySelectorAll('.g-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === gIndex));
+        }
+
+        function gSlide(dir) {
+            gSetSlide(gIndex + dir);
+        }
+
+        // touch swipe
+        let touchStartX = 0;
+        const gOuter = document.getElementById('galleryOuter');
+        gOuter.addEventListener('touchstart', e => {
+            touchStartX = e.touches[0].clientX;
+        });
+        gOuter.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 40) gSlide(dx < 0 ? 1 : -1);
+        });
+
+        /* ── FIREWORK CELEBRATION ─────────────────────── */
+        const FW_COLORS = ['#DC143C', '#FF6B6B', '#FFD700', '#FFA0A0', '#C9707B', '#FF1493', '#fff'];
+        const LOVE_MSGS = [
+            '💕 You are my everything',
+            '🌹 Forever, just us',
+            '💖 I choose you always',
+            '🤍 My heart, your home',
+            '✨ Us against the world',
+            '💍 Promised, forever',
+            '❤️ Yours, completely',
+        ];
+
+        function launchCelebration() {
+            for (let i = 0; i < 6; i++) {
+                setTimeout(() => firework(
+                    Math.random() * window.innerWidth,
+                    Math.random() * window.innerHeight * .6
+                ), i * 400);
+            }
+            LOVE_MSGS.forEach((msg, i) => {
+                setTimeout(() => {
+                    const b = document.createElement('div');
+                    b.className = 'love-bubble';
+                    b.textContent = msg;
+                    b.style.left = (10 + Math.random() * 70) + '%';
+                    document.body.appendChild(b);
+                    setTimeout(() => b.remove(), 5000);
+                }, i * 600 + 200);
+            });
+        }
+
+        function firework(x, y) {
+            for (let i = 0; i < 36; i++) {
+                const p = document.createElement('div');
+                p.className = 'fw-p';
+                const angle = (Math.PI * 2 * i) / 36;
+                const speed = 80 + Math.random() * 100;
+                p.style.left = x + 'px';
+                p.style.top = y + 'px';
+                p.style.background = FW_COLORS[Math.floor(Math.random() * FW_COLORS.length)];
+                p.style.setProperty('--tx', Math.cos(angle) * speed + 'px');
+                p.style.setProperty('--ty', Math.sin(angle) * speed + 'px');
+                p.style.boxShadow = `0 0 6px ${p.style.background}`;
+                document.body.appendChild(p);
+                setTimeout(() => p.remove(), 1300);
+            }
+        }
+    </script>
+</body>
+
+</html>
